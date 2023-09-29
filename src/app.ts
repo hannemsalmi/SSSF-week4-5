@@ -33,6 +33,7 @@ const app = express();
     const server = new ApolloServer<MyContext>({
       typeDefs,
       resolvers,
+      introspection: true,
       plugins: [
         process.env.ENVIRONMENT === 'production'
           ? ApolloServerPluginLandingPageProductionDefault({
